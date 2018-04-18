@@ -1,0 +1,32 @@
+<% include partials/head.ejs %>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-one-third">
+        <div class="card">
+          <div class="card-image">
+            <figure class="image">
+              <img src="/images/<%= movie.poster %>" alt="Placeholder image">
+            </figure>
+          </div>
+        </div>
+      </div>
+      <div class="column highlight-full image fadeInUp">
+        <div class="card">
+          <div class="card-content">
+            <div class="content">
+              <h1 class="title is-1"><%= movie.title %></h1>
+              <%= movie.description %>
+            </div>
+          </div>
+          <footer class="card-footer">
+            <p class="card-footer-item">
+              <% for (var i = 0; i < movie.main_characters.length; i++){ %>
+                <div class="tag is-black" style="margin:5px;">
+                  <%= movie.main_characters[i] %>
+                </div>
+                <% } %>
+            </p>
+          </footer>
+        </div>
+      </div>
+    </div>

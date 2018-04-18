@@ -1,0 +1,28 @@
+<% include partials/head.ejs %>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+  <div class="container">
+    <h1 class="title is-1">Star Wars Collections</h1>
+    <p class="subtitle is-5">When you combine a title and a subtitle, they move closer together.</p>
+      <div class="autoplay" style="width:100%;height:660px;">
+        <% for (var i = 0; i < movies.length; i++) { %>
+          <div style="padding:10px;">
+            <a href="/star_wars_episode/<%= movies[i].episode_number %>">
+              <img src="images/<%= movies[i].poster %>" style="width:460px;height:643px;border-radius:5px;">
+            </a>
+          </div>
+          <% } %>
+      </div>
+    </div>
+  </div>
+  <script>
+    $('.autoplay').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 1500,
+    });
+  </script>
+  </body>
+  </html>
